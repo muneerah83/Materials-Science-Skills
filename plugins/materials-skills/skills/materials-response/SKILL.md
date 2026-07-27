@@ -2,7 +2,11 @@
 name: materials-response
 version: "1.2.0"
 stability: stable
-description: Use when drafting, auditing, or strengthening point-by-point reviewer response letters for materials science and engineering manuscripts.
+description: >-
+  Use when drafting, auditing, or strengthening point-by-point reviewer
+  response letters for materials science and engineering manuscripts. Trigger
+  for rebuttal letters, cover letters for revised manuscripts, revision
+  change-lists, and strategy for hostile or conflicting reviewer comments.
 ---
 
 1. Read `manifest.yaml` paths from disk, including `always_load`.

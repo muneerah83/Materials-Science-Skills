@@ -1,23 +1,33 @@
-# Ceramics — Reviewer Guide
+# Ceramics — Family Reviewer Template
+# Applies to all ceramics sub-domains. Load the matching delta/ file for sub-domain-specific criteria.
 
-## Key review axes
+## Shared review axes (all ceramics systems)
 
-- **Density**: Is relative density reported? Is the theoretical density reference stated?
-- **Sintering profile**: Are temperature, heating rate, dwell time, and atmosphere all reported?
-- **Phase identification**: Is XRD supported by reference pattern matching or Rietveld?
-- **Mechanical statistics**: Are Weibull statistics used for strength data? Minimum n = 10?
-- **Toughness measurement**: Is the KIC method stated (SENB, SEPB, IF)?
+- **Density and porosity**: Must accompany all mechanical property data.
+  Comparing strength across compositions without density/porosity is not valid.
+- **Sintering profile completeness**: Temperature, heating rate, dwell time, and atmosphere must all be reported.
+  Missing any one of these makes results irreproducible.
+- **Phase identification**: XRD must include reference pattern matching (ICDD card numbers).
+  "Phase identified by XRD" without reference patterns is insufficient.
+- **Statistical reliability**: Weibull statistics required for any strength distribution claim; minimum n = 10.
+  Single-point or small-sample strength data cannot support reliability claims.
+- **Fracture toughness method**: KIC measurement method must be stated (SENB, SEPB, indentation IF).
+  Indentation KIC alone is not accepted by most journals without validation.
 
-## Common fatal flaws
+## Common fatal flaws (all ceramics systems)
 
-- Mechanical properties reported without density or porosity
-- Weibull modulus with <10 specimens
-- Sintering temperature without heating rate or dwell time
-- Phase identification without reference pattern matching
+| Flaw | Consequence |
+|---|---|
+| Mechanical properties without density or porosity | Cannot compare across compositions |
+| Weibull modulus from < 10 specimens | Statistically unreliable |
+| Sintering temperature without heating rate or dwell time | Irreproducible |
+| XRD without reference pattern matching | Phase ID not verified |
+| KIC from indentation only, not validated | Underestimates by 30–50% typically |
 
-## Typical reviewer questions
+## Shared reviewer questions
 
-- "What is the relative density? How was it measured?"
+- "What is the relative density? How was it measured (Archimedes/ISO 5017)?"
 - "What is the Weibull modulus and how many specimens were tested?"
-- "What method was used for fracture toughness measurement?"
-- "Is the sintering profile sufficiently detailed for reproduction?"
+- "Is the sintering profile complete: temperature + heating rate + dwell + atmosphere?"
+- "What ICDD reference patterns were used for phase identification?"
+- "What method was used for fracture toughness: SENB, SEPB, or indentation?"

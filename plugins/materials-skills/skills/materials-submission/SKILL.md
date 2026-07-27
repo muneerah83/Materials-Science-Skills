@@ -2,7 +2,11 @@
 name: materials-submission
 version: "1.1.0"
 stability: beta
-description: Use when assembling a journal submission package for the supported materials journals declared in journal-templates.
+description: >-
+  Use when assembling a journal submission package for the supported materials
+  journals declared in journal-templates. Trigger for submission checklists,
+  cover letter assembly, file manifest and format checks, and final
+  pre-submission gate reports for CBM, CCC, JBE, RMPD, and related journals.
 ---
 
 # Materials Submission Router

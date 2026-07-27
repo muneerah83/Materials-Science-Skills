@@ -1,36 +1,23 @@
-# Ceramics — Figure Guide
+# Ceramics — Figure Rules
 
-## Common figure types
-
-| Figure type | When to use | Key requirements |
-|---|---|---|
-| XRD pattern overlay | Phase identification, quantification | Peak labels; reference pattern; 2θ range; Rietveld fit if quantified |
-| SEM/TEM micrograph | Grain size, grain boundary, porosity | Scale bar; consistent mag; grain size distribution histogram inset |
-| Sintering curve | Density vs temperature, shrinkage | Heating rate; atmosphere; theoretical density line |
-| Bar chart (mechanical) | Strength, hardness, toughness grouped by composition | Error bars; Weibull modulus noted for strength |
-| Weibull plot | Strength distribution, reliability | Confidence bounds; sample size (n); characteristic strength |
-| Thermal conductivity plot | vs temperature, porosity, composition | Measurement method; mean temperature; density noted |
-| Impedance (Nyquist) plot | Electrical/ionic conductivity, grain/grain boundary | Frequency range; temperature; equivalent circuit fit |
-
-## Typical multi-panel structure
-
-**Panel A**: Density + phase (XRD confirming phase purity)
-**Panel B**: Microstructure (SEM grain morphology)
-**Panel C**: Mechanical (strength/hardness grouped bar chart + Weibull inset)
-**Panel D**: Functional (thermal/dielectric property vs temperature or composition)
+## Technical requirements per figure type
+- **XRD pattern overlay**: phase labels on each peak; ICDD reference card numbers cited; 2θ range stated; Rietveld fit required if phase quantities are claimed
+- **SEM/TEM micrograph**: scale bar; consistent magnification across panels; grain size distribution histogram if grain size is claimed
+- **Sintering curve (density vs temperature)**: heating rate and dwell time stated; theoretical density reference line shown
+- **Bar chart (mechanical)**: error bars required; Weibull modulus noted alongside strength data
+- **Weibull plot**: confidence bounds shown; sample size n ≥ 10; characteristic strength σ₀ and m reported
+- **Thermal conductivity plot**: measurement method (hot-plate, laser flash, heat-flow meter) stated; mean temperature and density noted
+- **Nyquist/Bode plot**: frequency range stated; temperature noted; equivalent circuit fit shown with component values
 
 ## Reviewer-sensitive pitfalls
-
-- ⚠️ XRD without phase labels or reference pattern matching.
-- ⚠️ SEM images at different magnifications without scale bars.
-- ⚠️ Weibull plot with fewer than 10 specimens.
-- ⚠️ Sintering temperature reported without heating rate or dwell time.
-- ⚠️ Thermal conductivity without measurement temperature or density.
+- ⚠️ XRD without phase labels or ICDD reference pattern.
+- ⚠️ Weibull plot with fewer than 10 specimens — statistics unreliable.
+- ⚠️ Sintering temperature claimed without heating rate or dwell time.
+- ⚠️ Thermal conductivity compared across studies without same measurement method or temperature.
 - ⚠️ Bar charts without error bars or statistical annotation.
 
 ## Caption boundary phrases
-
-- `XRD patterns of [ceramic] sintered at [T]°C. ▪ [phase A], ● [phase B]. Reference patterns: [source].`
-- `SEM micrographs of polished and thermally etched surfaces: (a) [composition A], (b) [composition B].`
-- `Weibull plot of flexural strength for [ceramic] (n = [number] specimens). Characteristic strength σ₀ = [value] MPa, m = [value].`
-- `Relative density and open porosity of [ceramic] as functions of sintering temperature.`
+- `XRD patterns of [ceramic] sintered at [T]°C. ▪ [phase A], ● [phase B]. Reference: ICDD [numbers].`
+- `SEM micrographs of polished and thermally etched surfaces: (a) [composition A], (b) [composition B]. Scale bar = [value] µm.`
+- `Weibull plot of flexural strength (n = [number] specimens). Characteristic strength σ₀ = [value] MPa, Weibull modulus m = [value].`
+- `Relative density and open porosity of [ceramic] as functions of sintering temperature (heating rate: [value]°C/min; dwell: [value] min).`

@@ -1,26 +1,29 @@
-# Civil / Construction Materials — Reviewer Guide
+# Civil / Construction Materials — Family Reviewer Template
+# Applies to all civil sub-domains. Load the matching delta/ file for sub-domain-specific criteria.
 
-## Key review axes
+## Shared review axes (all civil systems)
 
-- **Experimental design**: Is the control group appropriate? Are replicate numbers reported? Are test standards cited correctly?
-- **Performance evidence**: Is the improvement quantified with error bars? Is the full dosage range shown?
-- **Mechanism evidence**: Are mechanism claims backed by characterization (FTIR, SEM, thermal)? Or inferred from performance alone?
-- **Durability claims**: Is the test duration and condition relevant to the target service environment?
-- **Field applicability**: Are lab-to-field limitations acknowledged? Or is field performance assumed without validation?
+- **Control/baseline**: Is there an unmodified control? Improvement cannot be attributed without it.
+- **Replicate statistics**: Is n reported? Are SD or COV given for every performance claim?
+- **Test standard**: Is the ASTM/JTG/GB standard cited for each test? Uncited methods block reproducibility.
+- **Mechanism evidence**: Are mechanism claims backed by direct characterization (FTIR, SEM, XRD, thermal)?
+  Mechanism inferred from performance alone is circular reasoning.
+- **Field applicability**: Are lab-to-field limitations stated? Lab optimum ≠ field performance without validation.
 
-## Common fatal flaws
+## Common fatal flaws (all civil systems)
 
-| Flaw | Why it matters |
+| Flaw | Consequence |
 |---|---|
-| No control or baseline comparison | Cannot attribute improvement to the modification |
-| Optimum dosage without descending branch | The true optimum may be outside the tested range |
-| Mechanism from performance alone | Circular reasoning; no independent evidence |
-| No standard test method cited | Results cannot be reproduced or compared |
-| Field claims without field data | Reviewer will flag as overclaim |
+| No control or baseline group | Cannot attribute improvement |
+| No replicate statistics (n, SD) | Reviewer cannot assess significance |
+| Mechanism from performance only | Circular reasoning — reject |
+| Test method uncited or non-standard | Results cannot be reproduced |
+| Field performance claimed from lab data only | Overclaim — flag as must-fix |
 
-## Typical reviewer questions
+## Shared reviewer questions
 
-- "How was the optimum dosage determined? Was the descending branch characterized?"
-- "What is the statistical significance of the reported improvement?"
-- "Can the mechanism be supported by direct characterization rather than inferred from performance?"
-- "How does the material perform under the competing requirement (e.g., workability vs strength)?"
+- "What is the control group and how was it prepared?"
+- "How many replicates? What is the SD or COV?"
+- "Which test standard was used? Version year?"
+- "What direct characterization evidence supports the mechanism claim?"
+- "How are lab-to-field limitations addressed?"

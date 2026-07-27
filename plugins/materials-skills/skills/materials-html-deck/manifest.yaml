@@ -16,88 +16,88 @@ axes:
     values:
       paper-reading:
         path: references/deck-structures.md
-        triggers: ["paper", "journal club", "literature", "paper reading", "文献汇报", "精读"]
+        triggers: ["paper", "journal club", "paper reading", "文献汇报"]
       research-report:
         path: references/deck-structures.md
-        triggers: ["group meeting", "report", "thesis", "project", "组会", "汇报", "开题", "课题汇报"]
+        triggers: ["group meeting", "report", "组会"]
       review-talk:
         path: references/deck-structures.md
-        triggers: ["review", "综述", "research progress", "研究进展"]
+        triggers: ["review", "research progress", "综述"]
   paper_type:
     default: materials
     detect: "Classify the source paper before designing slides."
     values:
       discovery:
         path: static/fragments/paper_type/discovery.md
-        triggers: ["discovery", "question", "finding", "novel", "发现"]
+        triggers: ["discovery", "question", "发现"]
       methods:
         path: static/fragments/paper_type/methods.md
-        triggers: ["method", "algorithm", "protocol", "tool", "方法", "算法"]
+        triggers: ["method", "algorithm", "方法"]
       review:
         path: static/fragments/paper_type/review.md
-        triggers: ["review", "perspective", "commentary", "综述", "评论"]
+        triggers: ["review", "perspective", "综述"]
       materials:
         path: static/fragments/paper_type/materials.md
-        triggers: ["material", "chemistry", "physics", "engineering", "characterization", "性能", "材料", "化学", "物理", "表征", "mechanism", "FTIR", "SEM", "机理"]
+        triggers: ["material", "chemistry", "性能"]
   task:
     default: html-deck
     detect: "Does the user want only an outline or a browser-native HTML deck?"
     values:
       slide-outline:
         path: static/fragments/task/slide-outline.md
-        triggers: ["outline", "slide outline", "presentation outline", "大纲"]
+        triggers: ["outline", "slide outline", "大纲"]
       html-deck:
         path: static/fragments/task/html-deck.md
-        triggers: ["HTML deck", "browser deck", "presentation", "生成汇报", "制作汇报", "幻灯片"]
+        triggers: ["HTML deck", "browser deck", "presentation", "slides", "生成汇报"]
   output_format:
     default: html-deck
     detect: "Which deck artifact should be delivered?"
     values:
       html-deck:
         path: references/html-first-academic-deck.md
-        triggers: ["html deck", "browser preview", "deck source", "HTML preview"]
+        triggers: ["html deck", "browser preview", "HTML preview"]
   verification_level:
     default: strict-playwright
     detect: "How should the HTML deck be verified before delivery?"
     values:
       strict-playwright:
         path: references/playwright-verification.md
-        triggers: ["strict", "playwright", "browser QA", "screenshot check"]
+        triggers: ["strict", "playwright", "browser QA"]
   academic_style:
     default: assertion-evidence
     detect: "Which academic HTML style profile should shape the deck?"
     values:
       assertion-evidence:
         path: references/academic-style-library.md
-        triggers: ["assertion evidence", "Tufte", "paper reading", "technical report"]
+        triggers: ["assertion evidence", "Tufte"]
       dense-research:
         path: references/academic-style-library.md
-        triggers: ["dense data", "research report", "trend", "evidence map"]
+        triggers: ["dense data", "research report"]
       diagrammatic-minimalism:
         path: references/academic-style-library.md
-        triggers: ["mechanism", "model", "concept", "framework"]
+        triggers: ["mechanism", "model"]
       diagram-driven-isotype:
         path: references/academic-style-library.md
-        triggers: ["workflow", "process", "route", "system map"]
+        triggers: ["workflow", "process"]
       two-font-consulting:
         path: references/academic-style-library.md
-        triggers: ["project report", "proposal", "industry", "management"]
+        triggers: ["project report", "proposal"]
       bento-grid:
         path: references/academic-style-library.md
-        triggers: ["summary", "matrix", "multi metric", "progress snapshot"]
+        triggers: ["summary", "matrix"]
   source_type:
     default: outline
     detect: "What input format is available?"
     values:
       outline:
         path: references/html-deck-generation.md
-        triggers: ["outline", "markdown", ".md", "大纲"]
+        triggers: ["outline", "markdown", "大纲"]
       json:
         path: references/html-deck-generation.md
         triggers: ["json", ".json", "JSON outline"]
       data:
         path: references/html-deck-generation.md
-        triggers: ["data", "csv", "figure", "数据", "图表"]
+        triggers: ["data", "csv", "数据"]
       paper:
         path: references/html-deck-generation.md
         triggers: ["paper", "论文", "reading notes"]
@@ -110,22 +110,22 @@ axes:
         triggers: ["general fallback", "profile fallback", "neutral routing"]
       civil:
         path: static/fragments/domain/domain-context.md
-        triggers: ["civil", "asphalt", "cement", "concrete", "pavement", "construction", "土木", "建筑"]
+        triggers: ["civil", "asphalt", "土木"]
       polymers:
         path: static/fragments/domain/domain-context.md
-        triggers: ["polymer", "resin", "rubber", "thermoplastic", "高分子"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: static/fragments/domain/domain-context.md
-        triggers: ["metal", "alloy", "steel", "金属", "合金"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: static/fragments/domain/domain-context.md
         triggers: ["ceramic", "sintering", "陶瓷"]
       functional:
         path: static/fragments/domain/domain-context.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: static/fragments/domain/domain-context.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米"]
+        triggers: ["nano", "nanoparticle", "纳米"]
   material_family:
     detect: "Which materials family is central?"
     default: neutral
@@ -135,35 +135,35 @@ axes:
         triggers: ["neutral family", "profile family fallback", "no saved family"]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: ["civil", "construction", "building", "pavement", "土木", "建筑"]
+        triggers: ["civil", "construction", "土木"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "高分子", "聚合物", "树脂"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: ["ceramic", "porcelain", "refractory", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "陶瓷"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
   template:
     default: academic
     detect: "Which visual/structural template should dominate the deck?"
     values:
       academic:
         path: static/fragments/template/academic.md
-        triggers: ["academic", "conference talk", "group meeting", "conference", "学术", "组会", "会议"]
+        triggers: ["academic", "conference talk", "学术"]
       defense:
         path: static/fragments/template/defense.md
-        triggers: ["defense", "thesis", "dissertation", "答辩", "毕业论文"]
+        triggers: ["defense", "thesis", "答辩"]
       journal-club:
         path: static/fragments/template/journal-club.md
-        triggers: ["journal club", "literature", "paper reading", "文献汇报", "精读"]
+        triggers: ["journal club", "literature", "文献汇报"]
 
 references:
   on_demand:

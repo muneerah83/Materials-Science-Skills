@@ -22,31 +22,31 @@ axes:
     values:
       point-by-point:
         path: references/response-strategy.md
-        triggers: [reviewer, comments, response, point-by-point, 逐条回复, 回复审稿人]
+        triggers: ["reviewer", "comments", "逐条回复"]
       response-patterns:
         path: references/response-patterns.md
-        triggers: [English needs major revision, add more references, novelty, sample size, error bars, raw data, 高频审稿意见]
+        triggers: ["English needs major revision", "add more references", "高频审稿意见"]
       strategy-library:
         path: references/reviewer-strategy-library.md
-        triggers: [strategy, novelty challenge, method justification, scope boundary, conflicting reviewers, 策略, 新颖性质疑, 方法论证, 范围界定]
+        triggers: ["strategy", "novelty challenge", "策略"]
       remediation-plans:
         path: references/experiment-remediation-plans.md
-        triggers: [experiment plan, remediation, 补救方案, 实验计划, 补充实验, FTIR, SEM, XRD, mechanical testing, durability testing]
+        triggers: ["experiment plan", "remediation", "supplementary experiment", "补救方案"]
       comment-patterns:
         path: references/reviewer-comment-patterns.md
-        triggers: [reviewer pattern, common comment, typical concern, 审稿模式, 常见意见, 典型问题, pattern recognition]
+        triggers: ["reviewer pattern", "common comment", "审稿模式"]
       revision-plan:
         path: references/experiment-revision.md
-        triggers: [revise, experiment, revision plan, 补实验, 修改方案]
+        triggers: ["revise", "experiment", "补实验"]
       document-format:
         path: references/response-document-format.md
-        triggers: [author response, tracked changes, revision cover letter, response document, 回复文档, 修回格式]
+        triggers: ["author response", "tracked changes", "回复文档"]
       language-polish:
         path: references/language-bank.md
-        triggers: [polish response, language polish, tone, rebuttal language, 语气, 润色回复]
+        triggers: ["polish response", "language polish", "语气"]
       risk-audit:
         path: references/response-risk-checklist.md
-        triggers: [risk, reject, major revision, desk reject, 拒稿风险, 大修]
+        triggers: ["risk", "reject", "拒稿风险"]
 
   comment_type:
     default: mixed
@@ -56,22 +56,22 @@ axes:
         triggers: [mixed reviewer comments, multiple concern types]
       mechanism:
         path: static/fragments/comment_type/mechanism.md
-        triggers: [mechanism, FTIR, SEM, fluorescence, XRD, TG, 机理, 显微]
+        triggers: ["mechanism", "FTIR", "XRD", "机理"]
       performance:
         path: static/fragments/comment_type/performance.md
-        triggers: [strength, bonding, durability, viscosity, performance, 粘结, 耐久, 黏度]
+        triggers: ["strength", "bonding", "durability", "粘结"]
       writing:
         path: references/language-bank.md
-        triggers: [grammar, English, clarity, language, 表达, 英文]
+        triggers: ["grammar", "English", "表达"]
       novelty:
         path: references/reviewer-strategy-library.md
-        triggers: [novelty, contribution, incremental, 新颖性, 贡献, 创新性]
+        triggers: ["novelty", "contribution", "新颖性"]
       method:
         path: references/reviewer-strategy-library.md
-        triggers: [method, justification, sample size, statistics, 方法, 论证, 样本量]
+        triggers: ["method", "justification", "方法"]
       scope:
         path: references/reviewer-strategy-library.md
-        triggers: [scope, beyond scope, another journal, 范围, 超出范围]
+        triggers: ["scope", "beyond scope", "范围"]
 
   journal_family:
     default: materials
@@ -81,23 +81,23 @@ axes:
         triggers: [materials journal, generic materials journal]
       cbm-jbe:
         path: references/response-strategy.md
-        triggers: [CBM, Construction and Building Materials, JBE, Journal of Building Engineering]
+        triggers: ["CBM", "Construction and Building Materials"]
       ccc:
         path: references/response-strategy.md
-        triggers: [CCC, Cement and Concrete Composites, CCR, Cement and Concrete Research]
+        triggers: ["CCC", "Cement and Concrete Composites"]
       rmpd-ijpe:
         path: references/response-strategy.md
-        triggers: [RMPD, IJPE, JRE, pavement, Road Materials and Pavement Design]
+        triggers: ["RMPD", "IJPE"]
 
   tone:
     default: academic
     values:
       academic:
         path: static/fragments/tone/academic.md
-        triggers: [professional, courteous, standard response, 礼貌, 专业]
+        triggers: ["professional", "courteous", "礼貌"]
       firm:
         path: static/fragments/tone/firm.md
-        triggers: [unreasonable request, impossible experiment, scope boundary, firm, 坚定, 不合理要求]
+        triggers: ["unreasonable request", "impossible experiment", "坚定"]
 
   material_family:
     detect: Which materials family is central?
@@ -108,22 +108,22 @@ axes:
         triggers: [neutral family, profile family fallback, no saved family]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: [civil, construction, building, pavement, 土木, 建筑]
+        triggers: ["civil", "construction", "土木"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: [polymer, resin, rubber, epoxy, 高分子, 聚合物, 树脂]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: [metal, alloy, steel, aluminum, 金属, 合金, 钢]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: [ceramic, porcelain, refractory, 陶瓷, 耐火]
+        triggers: ["ceramic", "porcelain", "陶瓷"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: [semiconductor, dielectric, piezoelectric, 半导体, 介电, 压电]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: [nano, nanoparticle, 2D material, 纳米, 纳米材料]
+        triggers: ["nano", "nanoparticle", "纳米"]
 
   domain:
     detect: Which material domain does the response target?
@@ -134,22 +134,22 @@ axes:
         triggers: [general fallback, profile fallback, neutral routing]
       civil:
         path: static/fragments/domain/civil.md
-        triggers: [civil, asphalt, cement, concrete, pavement, construction, 土木, 建筑, 道路]
+        triggers: ["civil", "asphalt", "土木"]
       polymers:
         path: static/fragments/domain/polymers.md
-        triggers: [polymer, resin, rubber, thermoplastic, 高分子]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: [metal, alloy, steel, 金属, 合金]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: static/fragments/domain/ceramics.md
         triggers: [ceramic, sintering, 陶瓷]
       functional:
         path: static/fragments/domain/functional.md
-        triggers: [semiconductor, dielectric, piezoelectric, 半导体]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: static/fragments/domain/nano.md
-        triggers: [nano, nanoparticle, 2D material, 纳米]
+        triggers: ["nano", "nanoparticle", "纳米"]
 
   experiment_type:
     detect: What type of experiment is requested?
@@ -160,19 +160,19 @@ axes:
         triggers: [no experiment request, neutral experiment fallback]
       general:
         path: references/experiment-remediation-plans.md
-        triggers: [experiment, test, 实验, 测试]
+        triggers: ["experiment", "test", "实验"]
       mechanism:
         path: references/experiment-remediation-plans.md
-        triggers: [FTIR, SEM, XRD, TG, mechanism, characterization, 机理, 表征]
+        triggers: ["FTIR", "SEM", "机理"]
       performance:
         path: references/experiment-remediation-plans.md
-        triggers: [mechanical, durability, bonding, rheology, 性能, 耐久, 粘结]
+        triggers: ["mechanical", "durability", "性能"]
       statistical:
         path: references/experiment-remediation-plans.md
-        triggers: [replicate, sample size, ANOVA, statistics, 重复, 样本量, 统计]
+        triggers: ["replicate", "sample size", "ANOVA", "重复"]
       comparison:
         path: references/experiment-remediation-plans.md
-        triggers: [control, baseline, benchmark, comparison, 对照, 基准, 比较]
+        triggers: ["control", "baseline", "对照"]
 
 references:
   on_demand:

@@ -2,7 +2,11 @@
 name: materials-html-deck
 version: "3.0.0"
 stability: beta
-description: Use when generating browser-native HTML academic decks from materials science papers, notes, figures, data, or slide outlines.
+description: >-
+  Use when generating browser-native HTML academic decks from materials
+  science papers, notes, figures, data, or slide outlines. Trigger for paper
+  presentation decks, journal-club slides, defense and progress-report decks,
+  and self-contained HTML slide exports with embedded figures.
 ---
 
 # Materials HTML Deck Router

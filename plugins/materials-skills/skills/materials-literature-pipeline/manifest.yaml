@@ -31,13 +31,13 @@ axes:
     values:
       configure:
         path: static/core/workflow.md
-        triggers: ["configure", "set up", "monitoring plan", "literature watch"]
+        triggers: ["configure", "set up"]
       run:
         path: static/core/workflow.md
-        triggers: ["run pipeline", "screen papers", "daily digest", "weekly digest"]
+        triggers: ["run pipeline", "screen papers", "daily digest"]
       audit:
         path: static/core/scoring.md
-        triggers: ["audit scoring", "check candidates", "deduplicate", "score inflation"]
+        triggers: ["audit scoring", "check candidates", "deduplicate"]
 
   material_family:
     detect: "Which materials family is central?"
@@ -48,22 +48,22 @@ axes:
         triggers: ["neutral family", "profile fallback", "general materials"]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: ["civil", "construction", "pavement", "asphalt"]
+        triggers: ["civil", "construction", "asphalt"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: ["polymer", "resin", "epoxy", "rubber"]
+        triggers: ["polymer", "resin", "epoxy"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: ["metal", "alloy", "steel", "aluminum"]
+        triggers: ["metal", "alloy", "steel"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: ["ceramic", "sintering", "refractory", "porcelain"]
+        triggers: ["ceramic", "sintering", "refractory"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "functional material"]
+        triggers: ["semiconductor", "dielectric", "piezoelectric"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: ["nano", "nanoparticle", "nanocomposite", "2D material"]
+        triggers: ["nano", "nanoparticle", "2D material"]
 
   output:
     detect: "What output does the user need?"
@@ -71,25 +71,25 @@ axes:
     values:
       digest:
         path: assets/templates/literature-pipeline-digest.md
-        triggers: ["digest", "summary", "push note", "ranked list"]
+        triggers: ["digest", "summary"]
       candidate-table:
         path: assets/templates/literature-candidate-table.csv
-        triggers: ["candidate table", "csv", "screening table", "paper list"]
+        triggers: ["candidate table", "csv"]
       scoring-rubric:
         path: static/core/scoring.md
-        triggers: ["scoring", "rubric", "ranking", "priority"]
+        triggers: ["scoring", "rubric"]
       cron-plan:
         path: references/cron-operations.md
-        triggers: ["cron", "schedule", "daily push", "weekly push", "automation"]
+        triggers: ["cron", "schedule", "automation"]
       push-format:
         path: references/push-format.md
-        triggers: ["push format", "feishu", "telegram", "digest message", "notification"]
+        triggers: ["push format", "feishu", "notification"]
       gap-report:
         path: references/gap-analysis.md
-        triggers: ["gap analysis", "research gap", "blank area", "literature gap"]
+        triggers: ["gap analysis", "research gap"]
       review-compilation:
         path: references/review-compilation-workflow.md
-        triggers: ["review compilation", "综述", "review workflow", "literature review"]
+        triggers: ["review compilation", "review workflow", "综述"]
 
 references:
   on_demand:

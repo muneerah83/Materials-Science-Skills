@@ -6,6 +6,10 @@ Conventions, constants, and reusable code blocks for materials-science figure pr
 
 ## Constants
 
+> Executable source of truth: `scripts/materials_plot_style.py` contains the
+> public constants and helpers documented below. Import that module (or copy it
+> into a figure package); the focused API tests exercise the public surface.
+
 ### PALETTE_MATERIALS
 
 Materials-domain semantic color palette. Use when color carries material-system meaning (asphalt, cement, ceramics, metals, polymers).

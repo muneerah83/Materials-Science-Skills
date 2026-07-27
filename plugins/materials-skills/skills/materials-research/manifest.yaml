@@ -23,168 +23,94 @@ axes:
         triggers:
         - research topic
         - novelty
-        - gap
-        - paper angle
-        - research question
         - 选题
-        - 创新点
-        - 研究问题
-        - 论文角度
-        - 研究方向
       reading:
         path: static/fragments/task/reading.md
         triggers:
         - read paper
         - translate paper
-        - paper notes
         - 精读
-        - 文献阅读
-        - 文献翻译
       literature-review:
         path: static/fragments/task/literature-review.md
         triggers:
         - review
         - 综述
         - literature review
-        - research progress
-        - 研究进展
       citation-mapping:
         path: static/fragments/task/citation-mapping.md
         triggers:
         - citation
         - reference
-        - citation matrix
-        - literature search
-        - claim-source
         - 引用
-        - 参考文献
-        - 文献检索
-        - 引用矩阵
-        - 证据映射
       manuscript-writing:
         path: static/fragments/task/manuscript-writing.md
         triggers:
         - abstract
         - introduction
-        - discussion
-        - paper
-        - manuscript
         - 摘要
-        - 引言
-        - 讨论
-        - 论文写作
       journal-targeting:
         path: static/fragments/task/journal-targeting.md
         triggers:
         - journal
         - submission
-        - target
         - 投稿
-        - 选刊
-        - 期刊
       experiment-design:
         path: static/fragments/task/experiment-design.md
         triggers:
         - experiment
         - test matrix
-        - 实验方案
-        - 实验矩阵
-        - 试验设计
         - DOE
-        - factorial
-        - response surface
         - RSM
         - Taguchi
-        - 正交试验
-        - 响应面
-        - 因子设计
+        - experiment design
+        - 实验方案
       data-analysis:
         path: static/fragments/task/data-analysis.md
         triggers:
         - data
         - result
-        - interpret
-        - statistics
         - 数据
-        - 结果分析
-        - 数据分析
-        - 强度
-        - 粘度
-        - 黏度
-        - 储存稳定性
       data-fair:
         path: static/fragments/task/data-fair.md
         triggers:
         - FAIR
         - dataset package
-        - data availability
-        - metadata
-        - raw data
-        - processed data
-        - supplementary data
       figure-table:
         path: static/fragments/task/figure-table.md
         triggers:
         - figure
         - table
-        - plot
         - 图
-        - 表
-        - 作图
-        - 论文图表
       submission-package:
         path: static/fragments/task/submission-package.md
         triggers:
         - submission package
         - cover letter
-        - highlights
-        - graphical abstract
-        - declaration
         - 投稿包
-        - 投稿信
-        - 亮点
-        - 图文摘要
-        - 声明
       reviewer-response:
         path: static/fragments/task/reviewer-response.md
         triggers:
         - response to reviewer
         - reviewer response
-        - rebuttal
-        - revision response
         - 审稿回复
-        - 回复审稿人
-        - 返修
-        - 大修
-        - 小修
-        - rebuttal letter
       presentation:
         path: static/fragments/task/presentation.md
         triggers:
         - slides
         - journal club
         - 组会
-        - 汇报
-        - 幻灯片
       html-deck-generation:
         path: static/fragments/task/html-deck-generation.md
         triggers:
         - html deck
         - generate html deck
-        - browser slides
-        - academic deck
         - 生成HTML deck
-        - 生成PPT
-        - 制作PPT
       reviewer-audit:
         path: static/fragments/task/reviewer-audit.md
         triggers:
         - reviewer
         - risk
-        - desk reject
         - 审稿
-        - 拒稿风险
-        - 预审
   paper_stage:
     detect: Where is the manuscript or review workflow in the paper-production lifecycle?
     default: idea
@@ -194,55 +120,37 @@ axes:
         triggers:
         - idea
         - topic
-        - scope
-        - angle
-        - research question
         - 选题
-        - 研究问题
       screening:
         path: references/paper-production-orchestrator.md
         triggers:
         - screening
         - literature search
-        - source quality
-        - citation matrix
         - 文献筛选
-        - 检索
       reading:
         path: references/paper-production-orchestrator.md
         triggers:
         - reader-package
         - source_map
-        - evidence chain
         - 精读
-        - 证据链
       drafting:
         path: references/paper-production-orchestrator.md
         triggers:
         - draft
         - manuscript
-        - review outline
-        - section draft
         - 初稿
-        - 论文写作
       revision:
         path: references/paper-production-orchestrator.md
         triggers:
         - reviewer
         - revision
-        - weakness route
-        - gate report
         - 返修
-        - 审稿意见
       submission:
         path: references/paper-production-orchestrator.md
         triggers:
         - submission
         - cover letter
-        - highlights
-        - declaration
         - 投稿
-        - 投稿包
   workflow_mode:
     detect: Whether the user needs one output, a full paper-production pipeline, or
       a reviewer-risk loop.
@@ -253,27 +161,18 @@ axes:
         triggers:
         - single task
         - quick
-        - one section
-        - one table
       paper-production:
         path: references/paper-production-orchestrator.md
         triggers:
         - paper production
         - full workflow
-        - mini-review
-        - experimental manuscript
         - 论文生产
-        - 小综述
-        - 实验论文
       review-loop:
         path: references/paper-production-orchestrator.md
         triggers:
         - review loop
         - weakness routing
-        - regression check
-        - reviewer risk
         - 弱点路由
-        - 回流
   output_package:
     detect: What concrete package should the orchestrator produce or request from
       companion skills?
@@ -284,50 +183,41 @@ axes:
         triggers:
         - note
         - summary
-        - plan
         - 说明
       matrix:
         path: references/paper-production-orchestrator.md
         triggers:
         - matrix
         - claim-source
-        - evidence table
         - 矩阵
-        - 证据表
       reader-package:
         path: references/paper-production-orchestrator.md
         triggers:
         - reader-package
         - source_map.json
-        - citation_handoff.csv
-        - figure_handoff.csv
       manuscript:
         path: references/paper-production-orchestrator.md
         triggers:
         - manuscript
         - paper draft
-        - section draft
         - 论文初稿
       figure-package:
         path: references/paper-production-orchestrator.md
         triggers:
         - figure package
         - figure_contract.md
-        - caption_boundary
         - 图包
       gate-report:
         path: ../_shared/paper-production/paper-gate-report-template.md
         triggers:
         - gate report
         - quality gate
-        - paper gate
         - 质量门禁
       submission-package:
         path: references/paper-production-orchestrator.md
         triggers:
         - submission package
         - cover letter
-        - highlights
         - 投稿包
   material_family:
     detect: Which materials family is central?

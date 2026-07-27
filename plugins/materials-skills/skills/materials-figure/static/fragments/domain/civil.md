@@ -1,36 +1,23 @@
-# Civil / Construction Materials — Figure Guide
+# Civil / Construction Materials — Figure Rules
 
-Loaded automatically when the domain is civil/construction materials.
+## Technical requirements per figure type
+- **Dosage-performance curve**: full range including descending branch; error bars; optimum cannot be claimed without the descending branch
+- **Bar chart**: SD labels; statistical significance annotation (different letters or asterisks, p < 0.05)
+- **SEM/fluorescence panel**: consistent magnification across panels; scale bars; control and modified side-by-side
+- **FTIR spectra overlay**: baseline correction; key peak positions labelled; offset traces for clarity
+- **Rheology curve**: temperature or time range stated; log scale when spanning orders of magnitude; legend unambiguous
+- **Durability retention chart**: retention % or absolute values; conditioning parameters (temperature, duration, cycles) stated
+- **Radar/spider chart**: all axes normalised to the same scale; source measurement for each axis identified
 
-## Common figure types
-
-| Figure type | When to use | Key requirements |
-|---|---|---|
-| Dosage-performance curve | Showing how a modifier dosage affects a property | Full range (including descending branch); error bars |
-| Bar chart (grouped) | Comparing multiple groups or conditions | Standard deviation labels; statistical significance markers |
-| SEM/fluorescence panel | Showing microstructure or modifier distribution | Consistent magnification; scale bars; control vs modified |
-| FTIR spectra overlay | Showing chemical change (curing, modification) | Baseline correction; key peak labels; offset for clarity |
-| Rheology curve | Viscosity, G'/G", curing behavior | Temperature/time range; legend clear; log scale when appropriate |
-| Durability retention chart | Aging, freeze-thaw, moisture conditioning | Retention % or absolute values; conditioning parameters |
-| Radar/spider chart | Multi-property comparison across formulations | Normalized scale; source of each axis value |
-
-## Typical multi-panel structure (review figures)
-
-**Panel A–B**: Material characterization (FTIR + SEM showing modification worked)
-**Panel C–D**: Performance (dosage optimization + mechanical property)
-**Panel E–F**: Durability (aging/moisture retention + mechanism summary)
-
-## Reviewer-sensitive figure pitfalls
-
-- ⚠️ Dosage curve without descending branch (can't claim optimum).
+## Reviewer-sensitive pitfalls
+- ⚠️ Dosage curve without descending branch — cannot claim an optimum.
 - ⚠️ SEM images at different magnifications or without scale bars.
 - ⚠️ FTIR without key peak labels or baseline correction.
-- ⚠️ Bar chart without error bars or statistical significance.
-- ⚠️ Radar chart mixing different scales without normalization.
+- ⚠️ Bar chart without error bars or statistical significance markers.
+- ⚠️ Radar chart mixing different unit scales without normalisation.
 
 ## Caption boundary phrases
-
-- `FTIR spectra of [material] at different [variable] dosage. Peaks at [position] indicate [feature].`
+- `FTIR spectra of [material] at different [variable] dosage. Peaks at [position] cm⁻¹ indicate [feature].`
 - `Effect of [variable] on [property]. Error bars represent ±1 SD (n = [number]).`
-- `SEM micrographs of [control] (a) and [modified] (b). Scale bar = [value].`
+- `SEM micrographs of [control] (a) and [modified] (b). Scale bar = [value] µm.`
 - `[Property] retention after [aging condition] for [duration]. Different letters indicate significant differences (p < 0.05).`

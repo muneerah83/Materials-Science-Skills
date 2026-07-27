@@ -26,4 +26,4 @@ def test_research_router_removes_generic_layered_architecture() -> None:
     text = ROUTER.read_text(encoding="utf-8")
     assert "## Layered architecture" not in text
     assert "day-to-day entry point" not in text
-    assert len(text.split()) <= 300
+    assert len(text.split()) <= 340

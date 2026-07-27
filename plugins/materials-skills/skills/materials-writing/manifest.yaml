@@ -23,13 +23,13 @@ axes:
     values:
       experimental-manuscript:
         path: static/fragments/paper_type/experimental-manuscript.md
-        triggers: ["experiment", "results", "bonding performance", "waterborne epoxy", "test matrix", "mechanism"]
+        triggers: ["experiment", "results", "mechanism"]
       review-paper:
         path: static/fragments/paper_type/review-paper.md
-        triggers: ["review", "mini-review", "small review", "literature review", "research progress"]
+        triggers: ["review", "mini-review", "literature review"]
       methods-paper:
         path: static/fragments/paper_type/methods-paper.md
-        triggers: ["method", "standard", "protocol", "test method", "workflow"]
+        triggers: ["method", "standard", "protocol"]
 
   section:
     detect: "Which manuscript section is the target?"
@@ -47,7 +47,7 @@ axes:
         triggers: ["methods", "materials and methods", "experimental", "方法"]
       results-discussion:
         path: static/fragments/section/results-discussion.md
-        triggers: ["results", "discussion", "结果", "讨论"]
+        triggers: ["results", "discussion", "结果"]
       results:
         path: static/fragments/section/results.md
         triggers: ["results only", "results section"]
@@ -91,7 +91,7 @@ axes:
         triggers: ["English", "SCI", "manuscript"]
       zh-to-en:
         path: static/fragments/language/zh-to-en.md
-        triggers: ["Chinese", "translate", "中译英", "中文"]
+        triggers: ["Chinese", "translate", "中译英"]
 
   journal_family:
     detect: "Which journal family is the target?"
@@ -121,22 +121,22 @@ axes:
         triggers: ["neutral family", "profile family fallback", "no saved family"]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: ["civil", "construction", "building", "pavement", "土木", "建筑"]
+        triggers: ["civil", "construction", "土木"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "高分子", "聚合物", "树脂"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: ["ceramic", "porcelain", "refractory", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "陶瓷"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
   domain:
     detect: "Which material domain does the manuscript target?"
     default: general
@@ -146,22 +146,22 @@ axes:
         triggers: ["general fallback", "profile fallback", "neutral routing"]
       civil:
         path: static/fragments/domain/civil.md
-        triggers: ["civil", "asphalt", "pavement", "cement", "concrete", "construction", "土木", "建筑", "道路"]
+        triggers: ["civil", "asphalt", "concrete", "pavement", "土木"]
       polymers:
         path: static/fragments/domain/polymers.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "thermoplastic", "thermoset", "高分子", "聚合物"]
+        triggers: ["polymer", "resin", "epoxy", "高分子"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "ferrous", "nonferrous", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "steel", "金属"]
       ceramics:
         path: static/fragments/domain/ceramics.md
-        triggers: ["ceramic", "porcelain", "refractory", "sintering", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "sintering", "陶瓷"]
       functional:
         path: static/fragments/domain/functional.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "photonic", "optoelectronic", "半导体", "介电"]
+        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体"]
       nano:
         path: static/fragments/domain/nano.md
-        triggers: ["nano", "nanoparticle", "2D material", "graphene", "mxene", "纳米"]
+        triggers: ["nano", "nanoparticle", "2D material", "纳米"]
 
   input_source:
     detect: "Is the draft based on an experiment record or manual notes?"
@@ -172,7 +172,7 @@ axes:
         triggers: ["manual", "notes", "from scratch"]
       experiment-record:
         path: references/experiment-record-for-writing.md
-        triggers: ["experiment record", "from doe", "record", "yaml"]
+        triggers: ["experiment record", "from doe", "YAML"]
 
 references:
   on_demand:

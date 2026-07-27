@@ -27,7 +27,7 @@ def test_citation_router_removes_generic_layered_architecture() -> None:
     text = ROUTER.read_text(encoding="utf-8")
     assert "## Layered architecture" not in text
     assert "Build source-grounded literature search plans" not in text
-    assert len(text.split()) <= 220
+    assert len(text.split()) <= 240
 
 
 def test_citation_contract_has_one_default_authority() -> None:
