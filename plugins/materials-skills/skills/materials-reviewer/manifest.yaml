@@ -2,13 +2,13 @@ version: "1.1.0"
 status: stable
 
 context_budget:
-  target_activation_bytes: 16384
-  max_activation_bytes: 18432
+  target_activation_bytes: 18928
+  max_activation_bytes: 20480
   max_always_load: 3
   max_skill_lines: 55
   max_workflow_lines: 30
   route_scenarios_file: evals/context-routes.yaml
-  required_route_axes: [review_depth, journal_family, review_scope, material_family, domain]
+  required_route_axes: [review_depth, journal_family, review_scope, material_family, domain, journal_tier]
   required_route_scenarios: [default-standard-full, quick-precheck-figures, methodology-asphalt, mechanism-polymers, paper-production-weakness-rows]
 
 always_load:
@@ -22,13 +22,13 @@ axes:
     values:
       quick-scan:
         path: references/qa-checklist.md
-        triggers: ["quick review", "desk reject risk", "precheck", "screening"]
+        triggers: ["quick review", "precheck"]
       standard:
         path: references/review-axes.md
-        triggers: ["peer review", "review report", "pre-submission", "audit"]
+        triggers: ["peer review", "review report"]
       detailed:
         path: references/report-structure.md
-        triggers: ["detailed review", "full referee report", "major revision risk"]
+        triggers: ["detailed review", "full referee report"]
 
   journal_family:
     default: materials
@@ -41,83 +41,219 @@ axes:
         triggers: ["CBM", "Construction and Building Materials"]
       CCC:
         path: references/editorial-criteria.md
-        triggers: ["CCC", "Cement and Concrete Composites", "Cement and Concrete Research"]
+        triggers: ["CCC", "Cement and Concrete Composites"]
       RMPD:
         path: references/editorial-criteria.md
-        triggers: ["RMPD", "Road Materials and Pavement Design", "IJPE", "JRE", "pavement"]
+        triggers: ["RMPD", "Road Materials and Pavement Design"]
       JBE:
         path: references/editorial-criteria.md
-        triggers: ["JBE", "Journal of Building Engineering", "CSCM", "building"]
+        triggers: ["JBE", "Journal of Building Engineering"]
 
   review_scope:
     default: full-manuscript
     values:
       full-manuscript:
         path: static/fragments/review_scope/full-manuscript.md
-        triggers: ["full review", "complete manuscript", "comprehensive", "全文审稿", "完整"]
+        triggers: ["full review", "全文审稿"]
       figures-tables:
         path: static/fragments/review_scope/figures-tables.md
-        triggers: ["figure review", "table review", "visual check", "图表审稿", "图片"]
+        triggers: ["figure review", "图表审稿"]
       methodology:
         path: static/fragments/review_scope/methodology.md
-        triggers: ["method review", "experimental design", "statistical", "方法审稿", "实验设计"]
+        triggers: ["method review", "方法审稿"]
   material_family:
     detect: "Which materials family is central?"
     default: neutral
     values:
       neutral:
         path: ../_shared/core/direction-profile.md
-        triggers: ["neutral family", "profile family fallback", "no saved family"]
+        triggers: ["neutral family", "profile family fallback"]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: ["civil", "construction", "building", "pavement", "土木", "建筑"]
+        triggers: ["civil", "土木"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "高分子", "聚合物", "树脂"]
+        triggers: ["polymer", "高分子"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "金属", "合金", "钢"]
+        triggers: ["metal", "金属"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: ["ceramic", "porcelain", "refractory", "陶瓷", "耐火"]
+        triggers: ["ceramic", "陶瓷"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "半导体"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米", "纳米材料"]
+        triggers: ["nano", "纳米"]
 
   domain:
     detect: "Which material domain does the manuscript target?"
     default: general
+    inheritance:
+      mode: additive
+      scope: "A selected domain value loads its path and inherited values on this axis."
     values:
       general:
         path: ../_shared/core/direction-profile.md
-        triggers: ["general fallback", "profile fallback", "neutral routing"]
+        triggers: ["general fallback", "profile fallback"]
+      # Civil sub-domain deltas
+      asphalt:
+        path: static/fragments/delta/asphalt.md
+        inherits: [civil]
+        triggers: ["asphalt", "WER-EA", "沥青"]
+      cement-concrete:
+        path: static/fragments/delta/cement-concrete.md
+        inherits: [civil]
+        triggers: ["cement concrete", "水泥", "混凝土"]
+      geotechnical:
+        path: static/fragments/delta/geotechnical.md
+        inherits: [civil]
+        triggers: ["geotechnical", "岩土"]
+      sustainability-durability:
+        path: static/fragments/delta/sustainability-durability.md
+        inherits: [civil]
+        triggers: ["life cycle assessment", "可持续"]
+      steel-civil:
+        path: static/fragments/delta/steel-civil.md
+        inherits: [civil]
+        triggers: ["structural steel", "结构钢筋"]
+      thermal-insulation:
+        path: static/fragments/delta/thermal-insulation.md
+        inherits: [civil]
+        triggers: ["thermal insulation", "保温材料"]
+      timber-masonry:
+        path: static/fragments/delta/timber-masonry.md
+        inherits: [civil]
+        triggers: ["timber", "masonry", "木材"]
+      waterproofing-sealants:
+        path: static/fragments/delta/waterproofing-sealants.md
+        inherits: [civil]
+        triggers: ["waterproofing", "sealant", "防水"]
+      # Metals sub-domain deltas
+      ferrous-alloys:
+        path: static/fragments/delta/ferrous-alloys.md
+        inherits: [metals]
+        triggers: ["carbon steel", "stainless steel", "碳钢"]
+      nonferrous-alloys:
+        path: static/fragments/delta/nonferrous-alloys.md
+        inherits: [metals]
+        triggers: ["aluminum alloy", "titanium alloy", "铝合金"]
+      high-temperature-alloys:
+        path: static/fragments/delta/high-temperature-alloys.md
+        inherits: [metals]
+        triggers: ["superalloy", "高温合金"]
+      additive-metals:
+        path: static/fragments/delta/additive-metals.md
+        inherits: [metals]
+        triggers: ["LPBF", "metal 3D printing", "增材制造金属"]
+      # Ceramics sub-domain deltas
+      structural-ceramics:
+        path: static/fragments/delta/structural-ceramics.md
+        inherits: [ceramics]
+        triggers: ["structural ceramic", "结构陶瓷"]
+      functional-ceramics:
+        path: static/fragments/delta/functional-ceramics.md
+        inherits: [ceramics]
+        triggers: ["piezoelectric ceramic", "PZT", "压电陶瓷"]
+      bioceramics:
+        path: static/fragments/delta/bioceramics.md
+        inherits: [ceramics]
+        triggers: ["bioceramic", "hydroxyapatite", "生物陶瓷"]
+      refractories:
+        path: static/fragments/delta/refractories.md
+        inherits: [ceramics]
+        triggers: ["refractory", "耐火材料"]
+      # Polymers sub-domain deltas
+      thermoplastics:
+        path: static/fragments/delta/thermoplastics.md
+        inherits: [polymers]
+        triggers: ["thermoplastic", "热塑性塑料"]
+      thermosets:
+        path: static/fragments/delta/thermosets.md
+        inherits: [polymers]
+        triggers: ["thermoset", "epoxy resin", "热固性"]
+      rubber-elastomers:
+        path: static/fragments/delta/rubber-elastomers.md
+        inherits: [polymers]
+        triggers: ["rubber", "elastomer", "橡胶"]
+      polymer-composites:
+        path: static/fragments/delta/polymer-composites.md
+        inherits: [polymers]
+        triggers: ["fiber reinforced polymer", "CFRP", "碳纤维复合"]
+      # Functional sub-domain deltas
+      semiconductors:
+        path: static/fragments/delta/semiconductors.md
+        inherits: [functional]
+        triggers: ["semiconductor device", "半导体器件"]
+      photonic-optoelectronic:
+        path: static/fragments/delta/photonic-optoelectronic.md
+        inherits: [functional]
+        triggers: ["LED", "photodetector", "光伏"]
+      dielectrics-piezoelectrics:
+        path: static/fragments/delta/dielectrics-piezoelectrics.md
+        inherits: [functional]
+        triggers: ["dielectric material", "piezoelectric material", "介电材料"]
+      # Nano sub-domain deltas
+      nanoparticles:
+        path: static/fragments/delta/nanoparticles.md
+        inherits: [nano]
+        triggers: ["nanoparticle", "quantum dot", "纳米粒子"]
+      nanocomposites:
+        path: static/fragments/delta/nanocomposites.md
+        inherits: [nano]
+        triggers: ["nanocomposite", "纳米复合材料"]
+      nano-thin-films:
+        path: static/fragments/delta/nano-thin-films.md
+        inherits: [nano]
+        triggers: ["thin film deposition", "薄膜沉积"]
+      2d-materials:
+        path: static/fragments/delta/2d-materials.md
+        inherits: [nano]
+        triggers: ["graphene", "2D material", "二维材料"]
+      # Family-level fallbacks (loaded when no specific sub-domain is detected)
+      # Note: construction-materials and civil-generic intentionally have no delta —
+      # they are catch-all domains fully covered by the civil family template.
       civil:
         path: static/fragments/domain/civil.md
-        triggers: ["civil", "asphalt", "cement", "concrete", "pavement", "construction", "土木", "建筑", "道路"]
-      polymers:
-        path: static/fragments/domain/polymers.md
-        triggers: ["polymer", "resin", "rubber", "elastomer", "高分子", "聚合物"]
+        triggers: ["civil engineering", "建筑材料"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: ["metal", "alloy", "steel", "corrosion", "金属", "合金"]
+        triggers: ["metallic material", "金属材料"]
       ceramics:
         path: static/fragments/domain/ceramics.md
-        triggers: ["ceramic", "sintering", "alumina", "zirconia", "carbide", "陶瓷"]
-      functional:
-        path: static/fragments/domain/functional.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电"]
+        triggers: ["ceramic material", "陶瓷材料"]
+      polymers:
+        path: static/fragments/domain/polymers.md
+        triggers: ["polymer material", "高分子材料"]
       nano:
         path: static/fragments/domain/nano.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米"]
+        triggers: ["nanomaterial", "纳米材料"]
+      functional:
+        path: static/fragments/domain/functional.md
+        triggers: ["functional material", "功能材料"]
       mechanism:
         path: references/mechanism-evidence-checklist.md
-        triggers: ["mechanism", "FTIR", "SEM", "fluorescence", "rheology", "XRD", "TG"]
-      thermal-insulation:
-        path: references/insulation-reviewer-criteria.md
-        triggers: ["thermal insulation", "aerogel", "foam", "insulation", "隔热", "保温"]
+        triggers: ["mechanism", "FTIR", "XRD"]
+
+  journal_tier:
+    detect: "What is the target journal impact tier?"
+    default: tier1
+    inheritance:
+      mode: additive
+      scope: "Tier 2 adds Tier 1; Tier 3 adds Tier 1 and Tier 2."
+    values:
+      tier1:
+        path: static/fragments/journal_tier/tier1.md
+        triggers: ["domain journal", "CBM", "领域期刊"]
+      tier2:
+        path: static/fragments/journal_tier/tier2.md
+        inherits: [tier1]
+        triggers: ["acta materialia", "high impact journal", "IF 5-15"]
+      tier3:
+        path: static/fragments/journal_tier/tier3.md
+        inherits: [tier1, tier2]
+        triggers: ["nature materials", "top journal", "顶刊"]
 
 references:
   on_demand:

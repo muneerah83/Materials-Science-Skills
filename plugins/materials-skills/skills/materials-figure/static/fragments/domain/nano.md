@@ -1,36 +1,24 @@
-# Nanomaterials — Figure Guide
+# Nanomaterials — Figure Rules
 
-## Common figure types
-
-| Figure type | When to use | Key requirements |
-|---|---|---|
-| TEM micrograph + size histogram | Primary particle size and morphology | Scale bar; counting statistics (≥100 particles); lognormal fit |
-| SEM micrograph | Morphology, agglomeration, film surface | Scale bar; acceleration voltage noted |
-| XRD pattern + Scherrer analysis | Crystal structure, crystallite size | Peak labels; ICDD reference; FWHM measurement |
-| UV-vis absorption/PL spectra | Optical properties, bandgap, quantum confinement | Tauc plot; excitation wavelength for PL |
-| DLS size distribution | Hydrodynamic size, colloidal stability | PDI value; intensity/number/volume weighting |
-| Zeta potential vs pH | Surface charge, colloidal stability | pH range; measurement temperature |
-| TEM/EDS mapping | Elemental distribution, composition | Element maps; scale bar; quantification if available |
-
-## Typical multi-panel structure
-
-**Panel A**: Morphology (TEM image + size distribution histogram)
-**Panel B**: Structure (XRD pattern confirming phase + crystallite size)
-**Panel C**: Optical/functional property (UV-vis/PL spectra)
-**Panel D**: Application performance (catalytic/mechanical/device data)
+## Technical requirements per figure type
+- **TEM micrograph + size histogram**: scale bar; size distribution from ≥ 100 particles; lognormal fit preferred; mean ± SD reported
+- **SEM micrograph**: scale bar; acceleration voltage noted
+- **XRD pattern + Scherrer analysis**: peak labels with ICDD reference; FWHM measurement shown; Scherrer equation used only for crystallite size, not particle size
+- **UV-vis / PL spectra**: Tauc plot for bandgap (direct/indirect stated); excitation wavelength for PL; consistent intensity scale within comparison
+- **DLS size distribution**: PDI value reported; weighting (intensity/number/volume) stated; measurement temperature noted
+- **Zeta potential vs pH**: full pH range shown; isoelectric point identified; measurement temperature stated
+- **TEM/EDS mapping**: element maps at same scale bar; quantification table if composition is claimed
 
 ## Reviewer-sensitive pitfalls
-
-- ⚠️ TEM images at a single magnification without scale bar.
-- ⚠️ Size distribution from <100 particle counts.
-- ⚠️ XRD crystallite size reported as particle size (Scherrer measures coherent domain, not particle).
-- ⚠️ DLS reported without PDI or weighting information.
-- ⚠️ UV-vis absorption without baseline correction or Tauc plot assumptions stated.
-- ⚠️ "Monodisperse" claimed without showing the size distribution.
+- ⚠️ TEM images without scale bar or at a single magnification.
+- ⚠️ Size distribution from fewer than 100 particles — not statistically representative.
+- ⚠️ Scherrer crystallite size reported as particle size — these are different quantities.
+- ⚠️ DLS without PDI or weighting information.
+- ⚠️ "Monodisperse" claimed without showing the full size distribution.
+- ⚠️ UV-vis without baseline correction or Tauc plot assumptions stated.
 
 ## Caption boundary phrases
-
-- `TEM micrograph of [nanomaterial] with corresponding size distribution histogram (inset). Mean diameter: [value] ± [error] nm (n = [number]).`
-- `XRD pattern of [nanomaterial]. Crystallite size calculated from the [hkl] peak using the Scherrer equation: [value] nm.`
-- `UV-vis absorption spectrum of [nanomaterial] with Tauc plot (inset) for [direct/indirect] bandgap estimation.`
-- `Zeta potential of [nanomaterial] as a function of pH, indicating [isoelectric point] at pH [value].`
+- `TEM micrograph of [nanomaterial] with size distribution histogram (inset, n = [number] particles). Mean diameter: [value] ± [SD] nm.`
+- `XRD pattern of [nanomaterial]. Crystallite size from Scherrer equation ([hkl] peak): [value] nm. Reference: ICDD [number].`
+- `UV-vis absorption spectrum with Tauc plot (inset) for [direct/indirect] bandgap estimation: [value] eV.`
+- `Zeta potential of [nanomaterial] as a function of pH (25°C). Isoelectric point at pH [value].`

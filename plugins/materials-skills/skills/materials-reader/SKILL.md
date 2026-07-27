@@ -1,7 +1,11 @@
 ---
 name: materials-reader
 version: "1.3.0"
-description: Use when reading, translating, extracting, or organizing full papers for materials science and engineering research.
+description: >-
+  Use when reading, translating, extracting, or organizing full papers for
+  materials science and engineering research. Trigger for figure-aware
+  Chinese-English paper readers, deep-reading notes, method and data
+  extraction, paper cards, and reader-package handoffs from PDFs.
 ---
 
 # Materials Science Reader Router

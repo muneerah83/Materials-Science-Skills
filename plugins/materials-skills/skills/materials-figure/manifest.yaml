@@ -32,7 +32,7 @@ axes:
     values:
       python:
         path: static/fragments/backend/python.md
-        triggers: ["Python", "matplotlib", "seaborn", "plot.py", "pyplot", ".py", "figure", "plot", "chart"]
+        triggers: ["Python", "matplotlib", "pyplot", "seaborn"]
     multi: false
 
   material_family:
@@ -44,25 +44,25 @@ axes:
         triggers: ["neutral family", "profile family fallback", "no saved family"]
       civil:
         path: static/fragments/domain/civil.md
-        triggers: ["civil", "construction", "building", "pavement", "土木", "建筑"]
+        triggers: ["civil", "construction", "土木"]
       polymers:
         path: static/fragments/domain/polymers.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "高分子", "聚合物", "树脂"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: static/fragments/domain/ceramics.md
-        triggers: ["ceramic", "porcelain", "refractory", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "陶瓷"]
       functional:
         path: static/fragments/domain/functional.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: static/fragments/domain/nano.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
       thermal-insulation:
         path: static/fragments/domain/thermal-insulation.md
-        triggers: ["thermal insulation", "aerogel", "foam", "insulation", "隔热", "保温"]
+        triggers: ["thermal insulation", "aerogel", "隔热"]
 
   domain:
     detect: "Which material domain does the figure target?"
@@ -73,19 +73,19 @@ axes:
         triggers: ["general fallback", "profile fallback", "neutral routing"]
       civil:
         path: static/fragments/domain/civil.md
-        triggers: ["civil", "asphalt", "cement", "concrete", "pavement", "construction", "土木", "建筑", "道路"]
+        triggers: ["civil", "asphalt", "concrete", "pavement", "土木"]
       polymers:
         path: static/fragments/domain/polymers.md
-        triggers: ["polymer", "resin", "rubber", "thermoplastic", "高分子", "聚合物"]
+        triggers: ["polymer", "resin", "rubber", "高分子"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: ["metal", "alloy", "steel", "corrosion", "金属", "合金"]
+        triggers: ["metal", "alloy", "steel", "金属"]
       ceramics:
         path: static/fragments/domain/ceramics.md
-        triggers: ["ceramic", "sintering", "alumina", "zirconia", "carbide", "陶瓷"]
+        triggers: ["ceramic", "sintering", "alumina", "陶瓷"]
       functional:
         path: static/fragments/domain/functional.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电"]
+        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体"]
       nano:
         path: static/fragments/domain/nano.md
         triggers: ["nano", "nanoparticle", "2D material", "纳米"]
@@ -173,6 +173,8 @@ scripts:
   - scripts/run_validation_gates.py
   - scripts/validate_materials_claims.py
   - scripts/check_storyboard.py
+  - scripts/materials_plot_style.py
+  - scripts/qa_figure_export.py
 
 quality_gates:
   - release gate must report no issues for this skill

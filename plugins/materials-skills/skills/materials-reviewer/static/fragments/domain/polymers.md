@@ -1,22 +1,32 @@
-# Polymers — Reviewer Guide
+# Polymers — Family Reviewer Template
+# Applies to all polymer sub-domains. Load the matching delta/ file for sub-domain-specific criteria.
 
-## Key review axes
+## Shared review axes (all polymer systems)
 
-- **Thermal characterization**: Are Tg/Tm/Tc properly identified? DSC heating rate and cycle reported?
-- **Mechanical trade-off**: Is the strength-elongation trade-off reported, or only the improvement?
-- **Crosslinking claims**: Are they supported by gel content, DSC exotherm, or FTIR?
-- **Compatibility**: Is blend miscibility supported by single Tg (DSC/DMA)?
-- **Aging/degradation**: Are UV, thermal, or hydrolytic aging conditions relevant?
+- **Thermal characterization**: Tg (and Tm for semi-crystalline) must be reported via DSC or DMA.
+  Mechanical data without thermal characterization leaves the test temperature context unknown.
+- **Strength-elongation trade-off**: Both tensile strength AND elongation at break must be reported.
+  Improvement in one at the expense of the other is a key reviewer concern.
+- **Processing parameters**: Full processing schedule required (temperature profile, cooling rate, curing schedule).
+  Properties vary strongly with processing; missing parameters prevent reproducibility.
+- **Baseline comparison**: Neat polymer or commercial benchmark must be included.
+  "Improved properties" without a comparable baseline is an unverifiable claim.
+- **Specimen conditioning**: Was moisture conditioning applied (ASTM D618)? Especially critical for polyamides and hygroscopic polymers.
 
-## Common fatal flaws
+## Common fatal flaws (all polymer systems)
 
-- Mechanical data without thermal characterization (Tg unknown)
-- "Improved compatibility" claimed without SEM or DSC evidence
-- Processing parameters missing (temperature profile, cooling rate)
-- No comparison with neat polymer or commercial benchmark
+| Flaw | Consequence |
+|---|---|
+| Mechanical data without Tg (thermal characterization) | Test temperature context unknown |
+| Only the improvement shown, trade-off omitted | Reviewer will reject as incomplete |
+| Processing parameters missing or incomplete | Results not reproducible |
+| No neat polymer or benchmark comparison | Improvement claim unverifiable |
+| No specimen conditioning reported | Moisture-sensitive data not comparable |
 
-## Typical reviewer questions
+## Shared reviewer questions
 
-- "What is the evidence for crosslinking? Gel content or spectroscopic data?"
-- "How was Tg determined? Is it from the first or second heating cycle?"
-- "Was the property trade-off (e.g., strength vs elongation) fully characterized?"
+- "How was Tg determined? DSC or DMA? First or second heating cycle?"
+- "Is the strength-elongation trade-off fully characterized?"
+- "What are the complete processing parameters?"
+- "What is the comparison with the neat polymer or commercial benchmark?"
+- "Was specimen conditioning applied before testing?"

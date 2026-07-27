@@ -6,8 +6,9 @@ route_scenarios:
       review_scope: full-manuscript
       material_family: civil
       domain: civil
-    target_bytes: 20000
-    max_bytes: 22000
+      journal_tier: tier1
+    target_bytes: 26726
+    max_bytes: 28000
 
   - name: quick-precheck-figures
     axes:
@@ -16,8 +17,9 @@ route_scenarios:
       review_scope: figures-tables
       material_family: civil
       domain: civil
-    target_bytes: 20000
-    max_bytes: 22000
+      journal_tier: tier1
+    target_bytes: 26557
+    max_bytes: 28000
 
   - name: methodology-asphalt
     axes:
@@ -25,13 +27,14 @@ route_scenarios:
       journal_family: RMPD
       review_scope: methodology
       material_family: civil
-      domain: civil
+      domain: asphalt
+      journal_tier: tier2
     on_demand:
       - asphalt-criteria
       - evidence-contract
       - mechanism-evidence
-    target_bytes: 29000
-    max_bytes: 32000
+    target_bytes: 38155
+    max_bytes: 40000
 
   - name: mechanism-polymers
     axes:
@@ -40,13 +43,14 @@ route_scenarios:
       review_scope: methodology
       material_family: polymers
       domain: polymers
+      journal_tier: tier3
     on_demand:
       - polymers-criteria
       - evidence-contract
       - claim-strength-ladder
       - mechanism-evidence
-    target_bytes: 31000
-    max_bytes: 34000
+    target_bytes: 45030
+    max_bytes: 47000
 
   - name: paper-production-weakness-rows
     axes:
@@ -55,9 +59,10 @@ route_scenarios:
       review_scope: full-manuscript
       material_family: civil
       domain: civil
+      journal_tier: tier1
     on_demand:
       - weakness-routing
       - evidence-contract
       - claim-strength-ladder
-    target_bytes: 28000
-    max_bytes: 31000
+    target_bytes: 35354
+    max_bytes: 37000

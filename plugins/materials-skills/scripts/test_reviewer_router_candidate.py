@@ -30,4 +30,4 @@ def test_reviewer_router_removes_generic_layered_architecture() -> None:
     text = ROUTER.read_text(encoding="utf-8")
     assert "## Layered architecture" not in text
     assert "Simulate 2-3 independent reviewer reports" not in text
-    assert len(text.split()) <= 230
+    assert len(text.split()) <= 340

@@ -2,7 +2,11 @@
 name: materials-data
 version: "1.2.0"
 stability: stable
-description: Use when organizing, auditing, packaging, or drafting data and FAIR materials for materials science and engineering manuscripts.
+description: >-
+  Use when organizing, auditing, packaging, or drafting data and FAIR materials
+  for materials science and engineering manuscripts. Trigger for data
+  availability statements, FAIR audits, repository packaging, dataset README
+  drafting, experiment-record tables, and data-package handoffs.
 ---
 
 # Materials Science Data and FAIR Router

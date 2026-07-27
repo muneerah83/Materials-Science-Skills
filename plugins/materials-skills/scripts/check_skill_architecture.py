@@ -324,6 +324,146 @@ def _route_on_demand_path(
     return None
 
 
+def _inheritance_names(value_data: dict[str, Any]) -> tuple[list[str], str | None]:
+    """Normalize the compact same-axis additive inheritance declaration."""
+    raw = value_data.get("inherits", [])
+    if raw is None:
+        return [], None
+    if isinstance(raw, str):
+        return [raw], None
+    if isinstance(raw, list) and all(isinstance(item, str) and item for item in raw):
+        return list(raw), None
+    return [], "inherits must be a string or a list of non-empty strings"
+
+
+def _validate_inheritance_contract(manifest: dict[str, Any]) -> list[str]:
+    """Validate declared same-axis additive inheritance before routing scenarios run."""
+    failures: list[str] = []
+    axes = manifest.get("axes", {})
+    if not isinstance(axes, dict):
+        return failures
+    for axis_name, axis in axes.items():
+        if not isinstance(axis, dict):
+            continue
+        values = axis.get("values", {})
+        if not isinstance(values, dict):
+            continue
+        for value_name, value_data in values.items():
+            if not isinstance(value_data, dict) or "inherits" not in value_data:
+                continue
+            names, error = _inheritance_names(value_data)
+            location = f"axes.{axis_name}.values.{value_name}"
+            if error:
+                failures.append(f"{location}.inherits {error}")
+                continue
+            contract = axis.get("inheritance")
+            if not isinstance(contract, dict) or contract.get("mode") != "additive":
+                failures.append(f"{location}.inherits requires {axis_name}.inheritance.mode=additive")
+            for parent_name in names:
+                if parent_name not in values:
+                    failures.append(
+                        f"{location}.inherits references undeclared {axis_name}.{parent_name}"
+                    )
+                elif parent_name == value_name:
+                    failures.append(f"{location}.inherits cannot reference itself")
+
+        graph: dict[str, list[str]] = {}
+        for value_name, value_data in values.items():
+            if not isinstance(value_data, dict):
+                continue
+            names, error = _inheritance_names(value_data)
+            if error:
+                continue
+            graph[value_name] = [name for name in names if name != value_name and name in values]
+
+        visiting: set[str] = set()
+        visited: set[str] = set()
+
+        def visit(value_name: str, stack: tuple[str, ...] = ()) -> None:
+            if value_name in visiting:
+                cycle_start = stack.index(value_name) if value_name in stack else 0
+                cycle = " -> ".join((*stack[cycle_start:], value_name))
+                failures.append(f"axes.{axis_name}.inheritance cycle detected: {cycle}")
+                return
+            if value_name in visited:
+                return
+            visiting.add(value_name)
+            next_stack = (*stack, value_name)
+            for parent_name in graph.get(value_name, []):
+                visit(parent_name, next_stack)
+            visiting.remove(value_name)
+            visited.add(value_name)
+
+        for value_name in graph:
+            visit(value_name)
+    return failures
+
+
+def _route_axis_value(
+    skills_root: Path,
+    skill_name: str,
+    skill_dir: Path,
+    manifest: dict[str, Any],
+    axis_name: str,
+    value_name: str,
+    ancestry: tuple[str, ...] = (),
+) -> tuple[list[Path], list[str]]:
+    """Resolve one axis value and its same-axis additive inheritance chain."""
+    failures: list[str] = []
+    files: list[Path] = []
+    key = f"{axis_name}.{value_name}"
+    if key in ancestry:
+        return [], [f"{skill_name}: inheritance cycle detected at {key}"]
+
+    axes = manifest.get("axes", {})
+    axis = axes.get(axis_name) if isinstance(axes, dict) else None
+    values = axis.get("values", {}) if isinstance(axis, dict) else None
+    value_data = values.get(value_name) if isinstance(values, dict) else None
+    if not isinstance(axis, dict) or not isinstance(value_data, dict):
+        return [], [
+            f"{skill_name}: route value {value_name!r} is not declared for axis {axis_name!r}"
+        ]
+
+    path_text = value_data.get("path")
+    if not isinstance(path_text, str):
+        failures.append(
+            f"{skill_name}: route value {value_name!r} for axis {axis_name!r} has no path"
+        )
+    else:
+        resolved = _resolve_manifest_path(skills_root, skill_dir, path_text)
+        if resolved and resolved.is_file():
+            files.append(resolved)
+        else:
+            failures.append(
+                f"{skill_name}: route path {path_text!r} for {axis_name}.{value_name} is invalid"
+            )
+
+    names, error = _inheritance_names(value_data)
+    if error:
+        failures.append(f"{skill_name}: {axis_name}.{value_name}.{error}")
+        return files, failures
+    if names:
+        contract = axis.get("inheritance")
+        if not isinstance(contract, dict) or contract.get("mode") != "additive":
+            failures.append(
+                f"{skill_name}: {axis_name}.{value_name}.inherits requires inheritance.mode=additive"
+            )
+        next_ancestry = ancestry + (key,)
+        for parent_name in names:
+            parent_files, parent_failures = _route_axis_value(
+                skills_root,
+                skill_name,
+                skill_dir,
+                manifest,
+                axis_name,
+                parent_name,
+                next_ancestry,
+            )
+            files.extend(parent_files)
+            failures.extend(parent_failures)
+    return files, failures
+
+
 def _route_skill_payload(
     skills_root: Path,
     skill_name: str,
@@ -363,21 +503,16 @@ def _route_skill_payload(
         if not isinstance(axis, dict):
             failures.append(f"{skill_name}: route axis {axis_name!r} is not declared")
             continue
-        values = axis.get("values", {})
-        value = values.get(value_name) if isinstance(values, dict) else None
-        if not isinstance(value, dict) or not isinstance(value.get("path"), str):
-            failures.append(
-                f"{skill_name}: route value {value_name!r} is not declared for axis {axis_name!r}"
-            )
-            continue
-        path_text = value["path"]
-        resolved = _resolve_manifest_path(skills_root, skill_dir, path_text)
-        if resolved and resolved.is_file():
-            files.append(resolved)
-        else:
-            failures.append(
-                f"{skill_name}: route path {path_text!r} for {axis_name}.{value_name} is invalid"
-            )
+        route_files, route_failures = _route_axis_value(
+            skills_root,
+            skill_name,
+            skill_dir,
+            manifest,
+            axis_name,
+            value_name,
+        )
+        files.extend(route_files)
+        failures.extend(route_failures)
 
     if not isinstance(on_demand, list):
         failures.append(f"{skill_name}: route on_demand must be a list")
@@ -734,6 +869,7 @@ def inspect_skill(skill_dir: Path, skills_root: Path | None = None) -> dict[str,
         for location, trigger in _collect_triggers(manifest)
         if any(marker in trigger for marker in MOJIBAKE_MARKERS)
     ]
+    inheritance_failures = _validate_inheritance_contract(manifest)
     context_budget = _context_budget_report(skills_root, skill_dir, manifest)
 
     hard_issues = (
@@ -744,6 +880,7 @@ def inspect_skill(skill_dir: Path, skills_root: Path | None = None) -> dict[str,
         + missing_declared_paths
         + missing_trigger_files
         + missing_reference_paths
+        + inheritance_failures
         + context_budget["hard_failures"]
     )
     consistency = _check_consistency(skill_dir, manifest)
@@ -763,6 +900,7 @@ def inspect_skill(skill_dir: Path, skills_root: Path | None = None) -> dict[str,
         "missing_declared_paths": sorted(set(missing_declared_paths)),
         "missing_trigger_files": sorted(set(missing_trigger_files)),
         "missing_reference_paths": sorted(set(missing_reference_paths)),
+        "inheritance_failures": sorted(set(inheritance_failures)),
         "checked_manifest_paths": sorted(set(checked_manifest_paths)),
         "mojibake_triggers": mojibake_triggers,
         "context_budget": context_budget,

@@ -1,7 +1,12 @@
 ---
 name: materials-writing
 version: "1.3.0"
-description: Use when drafting, restructuring, auditing, or statefully revising manuscripts for materials science and engineering research.
+description: >-
+  Use when drafting, restructuring, auditing, or statefully revising
+  manuscripts for materials science and engineering research. Trigger for
+  section drafting from abstract to conclusion, experimental and review
+  papers, cover letters, highlights, Chinese-to-English drafting, and
+  journal-specific manuscript structure for CBM, CCC, JBE, and RMPD.
 ---
 
 # Materials Science Writing Router

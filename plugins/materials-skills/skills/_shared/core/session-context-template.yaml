@@ -1,0 +1,65 @@
+# Session Context Template
+#
+# Copy or create this file at .materials/session-context.yaml
+# before starting a multi-turn research session.
+#
+# This file is user-local and NOT tracked by git (.materials/ is gitignored).
+# Delete this file to reset session context (all fragments become cold again).
+#
+# Field conventions:
+#   warm_fragments: entries added by skills as fragments are first loaded;
+#                   each entry is qualified by its owning plugin/skill scope
+#   context_notes:  freeform session notes added by skills or the user
+#   turn_count:     incremented by the active skill on each turn
+
+session_id: ""          # filled by first skill on creation (e.g. 2026-07-27-asphalt)
+started_at: ""          # ISO timestamp of first skill use
+turn_count: 0
+
+# Active routing axes — updated when direction changes.
+# Skills compare incoming request axes against these to detect routing changes.
+active_routing:
+  material_family: ""   # civil | polymers | metals | ceramics | functional | nano
+  domain: ""            # specific sub-domain, e.g. asphalt, cement-concrete, ferrous-alloys
+  task: ""              # materials-research only: e.g. mini-review, evidence-audit, response
+  journal_tier: ""      # tier1 | tier2 | tier3
+  review_depth: ""      # quick-scan | standard | detailed
+
+# Fragments loaded this session. Skills append here on first load.
+# Format: {key, scope, path, label, loaded_turn}
+# key format: <plugin>/<skill>::<fragment-path>
+# Skills treat an entry as warm only when the complete key matches and
+# loaded_turn <= current turn_count. Entries without key or scope are cold.
+warm_fragments: []
+# Example entries (remove before use):
+# - key: materials-skills/materials-reviewer::static/fragments/domain/civil.md
+#   scope: materials-skills/materials-reviewer
+#   path: static/fragments/domain/civil.md
+#   label: civil-template
+#   loaded_turn: 1
+# - key: materials-skills/materials-figure::static/fragments/domain/civil.md
+#   scope: materials-skills/materials-figure
+#   path: static/fragments/domain/civil.md
+#   label: civil-template
+#   loaded_turn: 1
+# - key: materials-skills/materials-reviewer::static/fragments/delta/asphalt.md
+#   scope: materials-skills/materials-reviewer
+#   path: static/fragments/delta/asphalt.md
+#   label: asphalt-delta
+#   loaded_turn: 1
+# - key: materials-skills/materials-reviewer::static/fragments/journal_tier/tier2.md
+#   scope: materials-skills/materials-reviewer
+#   path: static/fragments/journal_tier/tier2.md
+#   label: journal-tier-2
+#   loaded_turn: 1
+
+# Freeform session notes. Skills or the user may append entries.
+# Useful for continuity without reloading full research state.
+context_notes: []
+# Example entries (remove before use):
+# - turn: 3
+#   skill: materials-reviewer
+#   note: "Dosage optimum identified as 8-12% per binder mass."
+# - turn: 5
+#   skill: materials-figure
+#   note: "Figure contract for bonding-strength bar approved."

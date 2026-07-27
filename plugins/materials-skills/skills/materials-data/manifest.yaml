@@ -22,16 +22,16 @@ axes:
     values:
       experiment-template:
         path: references/dataset-package.md
-        triggers: ["experiment data", "test matrix", "data template", "raw data", "spreadsheet", "CSV"]
+        triggers: ["experiment data", "test matrix", "spreadsheet", "CSV"]
       fair-audit:
         path: references/fair-checklist.md
-        triggers: ["FAIR", "audit", "data quality", "reproducible", "metadata check"]
+        triggers: ["FAIR", "audit", "metadata"]
       dataset-package:
         path: references/dataset-package.md
-        triggers: ["dataset package", "data package", "supplementary data", "submission data", "repository"]
+        triggers: ["dataset package", "data package", "supplementary data"]
       data-availability:
         path: references/data-availability-statements.md
-        triggers: ["data availability", "availability statement", "data statement", "declaration"]
+        triggers: ["data availability", "availability statement", "data statement"]
   material_family:
     detect: "Which materials family is central?"
     default: neutral
@@ -41,22 +41,22 @@ axes:
         triggers: ["neutral family", "profile family fallback", "no saved family"]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: ["civil", "construction", "building", "pavement", "土木", "建筑"]
+        triggers: ["civil", "construction", "土木"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "高分子", "聚合物", "树脂"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: ["ceramic", "porcelain", "refractory", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "陶瓷"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
 
   domain:
     detect: "Which material domain does the data package target?"
@@ -67,31 +67,31 @@ axes:
         triggers: ["general fallback", "profile fallback", "neutral routing"]
       asphalt:
         path: static/fragments/domain/asphalt.md
-        triggers: ["asphalt", "emulsified asphalt", "waterborne epoxy", "bitumen", "pavement", "沥青", "乳化沥青", "水性环氧"]
+        triggers: ["asphalt", "emulsified asphalt", "沥青"]
       cement-concrete:
         path: static/fragments/domain/cement-concrete.md
-        triggers: ["cement", "concrete", "mortar", "hydration", "UHPC", "geopolymer", "水泥", "混凝土", "砂浆"]
+        triggers: ["cement", "concrete", "水泥"]
       materials:
         path: static/fragments/domain/materials.md
-        triggers: ["materials", "construction materials", "土木材料", "建筑材料"]
+        triggers: ["materials", "construction materials", "土木材料"]
       polymers:
         path: static/fragments/domain/polymers.md
-        triggers: ["polymer", "resin", "thermoplastic", "thermoset", "rubber", "composite", "高分子", "聚合物", "橡胶"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "titanium", "superalloy", "金属", "合金", "钢", "铝合金"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: static/fragments/domain/ceramics.md
-        triggers: ["ceramic", "sintering", "alumina", "zirconia", "carbide", "陶瓷"]
+        triggers: ["ceramic", "sintering", "陶瓷"]
       functional:
         path: static/fragments/domain/functional.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "ferroelectric", "photonic", "optoelectronic", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: static/fragments/domain/nano.md
-        triggers: ["nano", "nanoparticle", "nanotube", "graphene", "2D material", "quantum dot", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
       thermal-insulation:
         path: static/fragments/domain/thermal-insulation.md
-        triggers: ["thermal insulation", "aerogel", "foam", "insulation", "隔热", "保温"]
+        triggers: ["thermal insulation", "aerogel", "隔热"]
   journal:
     default: generic
     values:
@@ -106,7 +106,7 @@ axes:
         triggers: ["JBE", "Journal of Building Engineering"]
       rmpd-ijpe:
         path: references/data-availability-statements.md
-        triggers: ["RMPD", "Road Materials and Pavement Design", "IJPE", "International Journal of Pavement Engineering"]
+        triggers: ["RMPD", "Road Materials and Pavement Design"]
       jre:
         path: references/data-availability-statements.md
         triggers: ["JRE", "Journal of Road Engineering"]
@@ -123,7 +123,7 @@ axes:
         triggers: ["manual", "from scratch", "no record"]
       experiment-record:
         path: static/core/experiment-record-input.md
-        triggers: ["experiment record", "doe output", "from doe", "yaml"]
+        triggers: ["experiment record", "doe output", "from DOE", "YAML"]
 
 references:
   on_demand:

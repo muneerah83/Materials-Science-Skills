@@ -2,7 +2,11 @@
 name: materials-citation
 version: "1.1.0"
 stability: stable
-description: Use when searching, screening, organizing, or mapping literature and citations for materials science and engineering manuscripts.
+description: >-
+  Use when searching, screening, verifying, or mapping literature and citations
+  for materials science and engineering manuscripts. Trigger for literature
+  search, DOI and reference verification, citation gap audits, claim-citation
+  mapping, and journal-specific reference formatting or export requests.
 ---
 
 # Materials Science Citation Router

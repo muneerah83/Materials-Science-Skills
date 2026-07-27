@@ -40,16 +40,16 @@ axes:
     values:
       pdf-text:
         path: static/fragments/source/pdf-text.md
-        triggers: ["selectable pdf", "text-based pdf", "pdf text", "可复制文本", "可编辑pdf"]
+        triggers: ["selectable pdf", "text-based pdf", "可复制文本"]
       scanned-pdf:
         path: static/fragments/source/scanned-pdf.md
-        triggers: ["scanned pdf", "image-only pdf", "ocr pdf", "扫描版", "图片pdf"]
+        triggers: ["scanned pdf", "image-only pdf", "OCR", "扫描版"]
       pasted-text:
         path: static/fragments/source/pasted-text.md
-        triggers: ["pasted text", "manuscript text", "abstract paste", "粘贴文本", "用户输入"]
+        triggers: ["pasted text", "manuscript text", "粘贴文本"]
       mixed-project:
         path: static/fragments/source/mixed-project.md
-        triggers: ["mixed project", "supplementary files", "inventor notes", "源码+论文", "混合项目"]
+        triggers: ["mixed project", "supplementary files", "源码+论文"]
     default: pdf-text
     multi: true
 
@@ -62,16 +62,16 @@ axes:
     values:
       full-draft:
         path: static/fragments/task/full-draft.md
-        triggers: ["full draft", "complete application", "全套申请", "完整申请"]
+        triggers: ["full draft", "complete application", "全套申请"]
       claim-set:
         path: static/fragments/task/claim-set.md
-        triggers: ["claim set", "claims only", "权利要求", "仅权利要求"]
+        triggers: ["claim set", "claims only", "权利要求"]
       disclosure-analysis:
         path: static/fragments/task/disclosure-analysis.md
-        triggers: ["disclosure analysis", "patentability extraction", "披露分析", "可专利性分析"]
+        triggers: ["disclosure analysis", "patentability extraction", "披露分析"]
       paper-patent-audit:
         path: static/fragments/task/paper-patent-audit.md
-        triggers: ["paper patent audit", "patent comparison", "对比审计", "论文专利对比"]
+        triggers: ["paper patent audit", "patent comparison", "对比审计"]
     default: full-draft
     multi: false
 
@@ -86,16 +86,16 @@ axes:
     values:
       algorithm-software:
         path: static/fragments/invention/algorithm-software.md
-        triggers: ["algorithm", "software", "ai model", "算法", "软件"]
+        triggers: ["algorithm", "software", "算法"]
       apparatus-system:
         path: static/fragments/invention/apparatus-system.md
-        triggers: ["apparatus", "device", "system", "装置", "设备", "系统"]
+        triggers: ["apparatus", "device", "system", "装置"]
       process-material:
         path: static/fragments/invention/process-material.md
-        triggers: ["process", "material", "preparation", "工艺", "材料", "制备"]
+        triggers: ["process", "material", "preparation", "工艺"]
       mixed:
         path: static/fragments/invention/mixed.md
-        triggers: ["mixed invention", "compound type", "复合类型", "混合发明"]
+        triggers: ["mixed invention", "compound type", "复合类型"]
     default: process-material
     multi: false
 

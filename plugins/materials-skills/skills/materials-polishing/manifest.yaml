@@ -29,25 +29,25 @@ axes:
         triggers: ["abstract", "摘要"]
       introduction:
         path: references/introduction.md
-        triggers: ["introduction", "intro", "引言", "前言"]
+        triggers: ["introduction", "intro", "引言"]
       methods:
         path: static/fragments/section/methods.md
-        triggers: ["methods", "methodology", "实验方法", "方法"]
+        triggers: ["methods", "methodology", "实验方法"]
       results-discussion:
         path: references/results-discussion.md
-        triggers: ["results", "discussion", "results and discussion", "结果", "讨论"]
+        triggers: ["results", "discussion", "结果"]
       conclusions:
         path: references/conclusions.md
-        triggers: ["conclusion", "conclusions", "closing paragraph", "结论"]
+        triggers: ["conclusion", "conclusions", "结论"]
       title:
         path: static/fragments/section/title.md
         triggers: ["title", "标题"]
       cover-letter:
         path: references/cover-letter.md
-        triggers: ["cover letter", "submission letter", "投稿信", "cover"]
+        triggers: ["cover letter", "submission letter", "投稿信"]
       generic:
         path: references/style-guardrails.md
-        triggers: ["polish", "rewrite", "translate", "润色", "翻译", "改写"]
+        triggers: ["polish", "rewrite", "translate", "润色"]
 
   paper_type:
     detect: |
@@ -57,10 +57,10 @@ axes:
     values:
       research:
         path: static/fragments/paper_type/research.md
-        triggers: ["research", "experimental", "results", "data", "实验", "研究"]
+        triggers: ["research", "experimental", "实验"]
       review:
         path: static/fragments/paper_type/review.md
-        triggers: ["review", "mini-review", "literature review", "综述", "进展"]
+        triggers: ["review", "mini-review", "综述"]
 
   journal_family:
     detect: |
@@ -70,44 +70,44 @@ axes:
     values:
       materials:
         path: references/style-guardrails.md
-        triggers: ["CBM", "JBE", "CSCM", "materials", "construction materials", "土木材料"]
+        triggers: ["CBM", "JBE", "土木材料"]
       pavement:
         path: references/pavement-language.md
-        triggers: ["RMPD", "IJPE", "JRE", "pavement", "asphalt", "路面", "沥青"]
+        triggers: ["RMPD", "IJPE", "pavement", "路面"]
       cement-concrete:
         path: references/cement-concrete-language.md
-        triggers: ["CCC", "CCR", "cement", "concrete", "水泥", "混凝土"]
+        triggers: ["CCC", "CCR", "水泥"]
       polymers:
         path: references/polymers-language.md
-        triggers: ["polymer", "thermoplastic", "thermoset", "rubber", "composite", "高分子", "聚合物", "橡胶"]
+        triggers: ["polymer", "thermoplastic", "高分子"]
       ceramics:
         path: references/ceramics-language.md
-        triggers: ["ceramic", "sintering", "alumina", "zirconia", "carbide", "陶瓷", "烧结"]
+        triggers: ["ceramic", "sintering", "陶瓷"]
       metals:
         path: references/metals-language.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "titanium", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "金属"]
       insulation:
         path: references/insulation-language.md
-        triggers: ["thermal insulation", "aerogel", "foam", "insulation", "隔热", "保温"]
+        triggers: ["thermal insulation", "aerogel", "隔热"]
       nano:
         path: references/nano-language.md
-        triggers: ["nano", "nanoparticle", "nanotube", "graphene", "2D material", "quantum dot", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
       functional:
         path: references/functional-language.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "ferroelectric", "photonic", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
 
   language_mode:
     default: rulebook
     values:
       rulebook:
         path: references/language-rulebook.md
-        triggers: ["language rules", "SCI style", "academic style", "语言规则", "写作规则"]
+        triggers: ["language rules", "SCI style", "语言规则"]
       chinese-to-english:
         path: references/chinese-to-english-patterns.md
-        triggers: ["Chinese to English", "translate", "中译英", "中文润色"]
+        triggers: ["Chinese to English", "translate", "中译英"]
       claim-strength:
         path: ../_shared/core/claim-strength-ladder.md
-        triggers: ["claim strength", "hedging", "causality", "overclaim", "语气", "强度"]
+        triggers: ["claim strength", "hedging", "overclaim", "语气"]
   material_family:
     detect: "Which materials family is central?"
     default: neutral
@@ -117,22 +117,22 @@ axes:
         triggers: ["neutral family", "profile family fallback", "no saved family"]
       civil:
         path: ../materials-research/static/fragments/domain/civil-family.md
-        triggers: ["civil", "construction", "building", "pavement", "土木", "建筑"]
+        triggers: ["civil", "construction", "土木"]
       polymers:
         path: ../materials-research/static/fragments/domain/polymers-family.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "高分子", "聚合物", "树脂"]
+        triggers: ["polymer", "resin", "高分子"]
       metals:
         path: ../materials-research/static/fragments/domain/metals-family.md
-        triggers: ["metal", "alloy", "steel", "aluminum", "金属", "合金", "钢"]
+        triggers: ["metal", "alloy", "金属"]
       ceramics:
         path: ../materials-research/static/fragments/domain/ceramics-family.md
-        triggers: ["ceramic", "porcelain", "refractory", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "陶瓷"]
       functional:
         path: ../materials-research/static/fragments/domain/functional-family.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体", "介电", "压电"]
+        triggers: ["semiconductor", "dielectric", "半导体"]
       nano:
         path: ../materials-research/static/fragments/domain/nano-family.md
-        triggers: ["nano", "nanoparticle", "2D material", "纳米", "纳米材料"]
+        triggers: ["nano", "nanoparticle", "纳米"]
 
   domain:
     detect: "Which material domain does the manuscript target?"
@@ -143,22 +143,22 @@ axes:
         triggers: ["general fallback", "profile fallback", "neutral routing"]
       civil:
         path: static/fragments/domain/civil.md
-        triggers: ["civil", "asphalt", "cement", "concrete", "pavement", "construction", "土木", "建筑", "道路"]
+        triggers: ["civil", "asphalt", "concrete", "土木"]
       polymers:
         path: static/fragments/domain/polymers.md
-        triggers: ["polymer", "resin", "rubber", "epoxy", "thermoplastic", "高分子", "聚合物"]
+        triggers: ["polymer", "resin", "epoxy", "高分子"]
       metals:
         path: static/fragments/domain/metals.md
-        triggers: ["metal", "alloy", "steel", "ferrous", "合金", "钢"]
+        triggers: ["metal", "alloy", "steel", "合金"]
       ceramics:
         path: static/fragments/domain/ceramics.md
-        triggers: ["ceramic", "porcelain", "refractory", "sintering", "陶瓷", "耐火"]
+        triggers: ["ceramic", "porcelain", "sintering", "陶瓷"]
       functional:
         path: static/fragments/domain/functional.md
-        triggers: ["semiconductor", "dielectric", "piezoelectric", "optoelectronic", "半导体", "介电"]
+        triggers: ["semiconductor", "dielectric", "piezoelectric", "半导体"]
       nano:
         path: static/fragments/domain/nano.md
-        triggers: ["nano", "nanoparticle", "2D material", "graphene", "纳米"]
+        triggers: ["nano", "nanoparticle", "2D material", "纳米"]
 
 references:
   on_demand:
